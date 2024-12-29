@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    // Correct way to set innerHTML using JSON.stringify
+    const myObject = { message: "Hello" };
+    document.getElementById("myDiv").innerHTML = JSON.stringify(myObject);
+
+    // Alternative approach to directly build the HTML string
+    const myDiv = document.getElementById("myDiv");
+    myDiv.innerHTML = '<p>' + myObject.message + '</p>';
+  </script>
+</body>
+</html>
